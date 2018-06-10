@@ -1,0 +1,48 @@
+data a b c d e;
+   a=rannor(0);
+run;
+proc datasets;
+quit;
+libname aa "D:\The Application of SAS in Financial Research\CH06\data\aa";
+data aa.a;
+   set a;
+run;
+data aa.b;
+   set b;
+run;
+data aa.c;
+   set c;
+run;
+data aa.d;
+   set d;
+run;
+data aa.e;
+   set e;
+run;
+libname bb "D:\The Application of SAS in Financial Research\CH06\data\bb";
+proc datasets noprint;
+copy in=work out=bb;
+quit;
+libname cc " D:\The Application of SAS in Financial Research\CH06\data\cc";
+proc dataset noprint;
+copy in=work out=cc;
+select a c e;
+quit;
+libname dd " D:\The Application of SAS in Financial Research\CH06\data\dd";
+proc datasets noprint;
+copy in=work out=dd;
+exclude a c;
+quit;
+
+proc datasets library=aa noprint;
+delete a;
+quit;
+
+proc datasets library=bb noprint;
+save a b;
+quit;
+proc datasets kill;
+quit;
+
+proc datasets library=cc kill;
+quit;
