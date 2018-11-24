@@ -5,8 +5,7 @@ proc corr data=&file  spearman cov outp=cov;
    ods output simplestats=d;
    ods output spearmancorr=spear;
 run;
-
-%macro corr (file,file2);
+%macro corr(file,file2);
    data d;
       set d nobs=x;
 	     call symput('de',x);

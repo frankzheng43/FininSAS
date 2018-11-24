@@ -40,7 +40,7 @@ y*10000+m*100+d as date,
 stkcd_nm as stkcd,
 event as event_type
 from a
-where  event contains "????"
+where  event contains "现金股息"
 /*
 only chinese edition can work
 */
@@ -57,7 +57,7 @@ y*10000+m*100+d as date,
 stkcd_nm,
 event
 from a
-where  event contains "????"
+where  event contains "现金股息"
 /*
 only chinese edition can work
 */
